@@ -21,4 +21,9 @@ public class CourseService {
 	public Course getOne(int id) {
 		return repository.getOne(id);
 	}
+	
+	public Course addCourse(String name, String code) {
+		Course course = new Course(name, code);
+		return repository.save(course);
+	}
 }
