@@ -22,8 +22,8 @@ import com.mumSchud.springbootmum.service.studentService;
 public class TestController {
 	
 	@RequestMapping("/welcome")
-	public ModelAndView firstPage() {
-		return new ModelAndView("welcome");
+	public String firstPage() {
+		return "welcome";
 	}
 
 	@RestController
