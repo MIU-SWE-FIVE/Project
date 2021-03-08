@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.mumSchud.springbootmum.repository.StudentRepository;
 
 @SpringBootApplication
+
 @EnableJpaRepositories(basePackageClasses = StudentRepository.class)
 
 public class SpringBootMumApplication {
