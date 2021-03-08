@@ -20,7 +20,8 @@ import com.mumSchud.springbootmum.entity.Student;
 import com.mumSchud.springbootmum.service.studentService;
 
 @Controller
-public class StudentController {
+public class StudentController { 
+
 	  @Autowired
 	    private studentService service;
 	  
