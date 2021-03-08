@@ -8,6 +8,7 @@ import com.mumSchud.springbootmum.repository.StudentRepository;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackageClasses = StudentRepository.class)
+
 public class SpringBootMumApplication {
 
 	public static void main(String[] args) {
