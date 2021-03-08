@@ -19,14 +19,14 @@ public class Faculty {
     @Id
     @GeneratedValue
     private int id;
-    private String firstname;
-    private String lastname;
-    private String position;
+    private String name;
+    private String phonenumber;
+    private String address;
     
-	public Faculty(String firstname, String lastname, String position) {
-		this.firstname=firstname;
-		this.lastname=lastname;
-		this.position=position;
+	public Faculty(String name, String phonenumber, String address) {
+		this.name=name;
+		this.phonenumber=phonenumber;
+		this.address=address;
 	}
 	public Faculty() {
 	}
@@ -36,22 +36,28 @@ public class Faculty {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getName() {
+		return name;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getLastname() {
-		return lastname;
+	public String getPhonenumber() {
+		return phonenumber;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setPhonenumber(String number) {
+		this.phonenumber = number;
 	}
-	public String getPositoin() {
-		return position;
+	public String getAddress() {
+		return address;
 	}
-	public void setAge(String position) {
-		this.position = position;
+	public void setAddress(String position) {
+		this.address = position;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return id+" "+name+" "+phonenumber+" "+ address;
 	}
 }

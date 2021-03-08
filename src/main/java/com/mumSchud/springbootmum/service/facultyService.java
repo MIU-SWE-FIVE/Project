@@ -33,9 +33,14 @@ public class facultyService {
 
     public Faculty updateFaculty(Faculty faculty,int id) {
     	Faculty existingfaculty = repository.findById(id).orElse(null);
-    	existingfaculty.setFirstname(faculty.getFirstname());
-    	existingfaculty.setLastname(faculty.getLastname());
-    	existingfaculty.setAge(faculty.getPositoin());
+    	existingfaculty.setName(faculty.getName());
+    	existingfaculty.setPhonenumber(faculty.getPhonenumber());
+    	existingfaculty.setAddress(faculty.getAddress());
+    	/*
+    	System.out.println("___________update service_________________");
+    	System.out.println(faculty);
+    	System.out.println("____________________________");
+    	*/
         return repository.save(existingfaculty);
     }
 
