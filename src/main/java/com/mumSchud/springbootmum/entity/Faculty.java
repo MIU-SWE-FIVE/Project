@@ -11,7 +11,6 @@ import javax.persistence.Table;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "FACULTY_TBL")
 public class Faculty {

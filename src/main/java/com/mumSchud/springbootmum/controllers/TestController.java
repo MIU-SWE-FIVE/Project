@@ -36,7 +36,7 @@ public class TestController {
 	    public Student addStudent( @RequestParam String firstname,
                 @RequestParam String lastname,
                 @RequestParam int age) {
-	    	Student student=new Student(firstname,lastname,age);
+	    	Student student= new Student(firstname,lastname,age, "");
 	        return service.saveStudent(student);
 	    }
 
@@ -55,7 +55,7 @@ public class TestController {
 	    public Student updateStudent(@RequestParam String firstname,
                 @RequestParam String lastname,
                 @RequestParam int age,@PathVariable int id) {
-	    	Student student=new Student(firstname,lastname,age);
+	    	Student student=new Student(firstname,lastname,age, "");
 	        return service.updateStudent(student,id);
 	    }
 
