@@ -32,6 +32,7 @@
 							<td th:text="${course.code}" />
 							<td th:text="${course.name}" />
 						</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 			</div>
@@ -41,20 +42,22 @@
 			<h4 class="card-header text-center text-secondary py-3">Create a
 				New Course</h4>
 			<div class="card-body">
-				<form method="post" action="/courses">
+				<form method="get"
+					action="${pageContext.request.contextPath}/blocks">
 					<div class="input-group mb-3">
 						<input type="text" class="form-control text-primary"
-							placeholder="Course Code" aria-label="code" name="code"
+							placeholder="Course Code" aria-label="courseCode"
 							aria-describedby="course code" required>
 					</div>
 					<div class="input-group mb-3">
 						<input type="text" class="form-control text-primary"
-							placeholder="Course Name" aria-label="name" name="name"
+							placeholder="Course Name" aria-label="courseName"
 							aria-describedby="course name" required>
 					</div>
 					<div>
-						<input type="submit" id="submit-btn"
-							class="d-block btn btn-outline-primary ms-auto" value="Create">
+						<button type="submit" id="submit-btn"
+							class="d-block btn btn-outline-secondary ms-auto">
+							Create</button>
 					</div>
 				</form>
 			</div>
