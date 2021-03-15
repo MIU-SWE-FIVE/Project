@@ -29,8 +29,7 @@ public class StudentController {
 	public String studentPortal(Model model) {
 		List<Student>students=service.getStudents();
     	model.addAttribute("students", students);
-		return "students";
-	}
+    	  return "students";	}
 	
 	@RequestMapping("/students/{id}")
 	public String updatePage(Model model,@PathVariable int id) {
@@ -42,8 +41,6 @@ public class StudentController {
 
 	@RestController
 	public class StudentRestController {
-
-	  
 
 	    @PostMapping("/api/students")
 	    public ModelAndView addStudent(Model model ,@RequestParam String firstname,

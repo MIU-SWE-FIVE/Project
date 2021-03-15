@@ -27,8 +27,7 @@ public class Faculty {
 		this.phonenumber=phonenumber;
 		this.address=address;
 	}
-	public Faculty() {
-	}
+
 	public int getId() {
 		return id;
 	}
