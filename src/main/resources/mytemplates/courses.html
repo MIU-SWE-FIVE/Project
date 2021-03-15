@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 
-<title>Team 5</title>
+<title>Team 5 - Courses</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -29,9 +29,9 @@
 					</thead>
 					<tbody>
 						<tr th:each="course: ${courses}">
-							<th scope="row" th:text="${course.id}" />
-							<td th:text="${course.code}" />
-							<td th:text="${course.name}" />
+							<th scope="row" class="align-middle" th:text="${course.id}" />
+							<td class="align-middle" th:text="${course.code}" />
+							<td class="align-middle" th:text="${course.name}" />
 							<!-- Button trigger modal -->
 
 							<td class="text-end">
