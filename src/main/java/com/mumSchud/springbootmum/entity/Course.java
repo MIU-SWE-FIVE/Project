@@ -4,20 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import lombok.Data;
-<<<<<<< Updated upstream
-
-@Data
-@Entity
-=======
 import lombok.Getter;
 import lombok.Setter;
 
 @Data
 @Entity
 @Getter @Setter
->>>>>>> Stashed changes
+
 @Table(name = "courses")
 public class Course {
 	@Id
@@ -26,11 +20,7 @@ public class Course {
 	
 	private String name;
 	private String code;
-<<<<<<< Updated upstream
-	
-=======
 
->>>>>>> Stashed changes
 	public Course() {
 		
 	}

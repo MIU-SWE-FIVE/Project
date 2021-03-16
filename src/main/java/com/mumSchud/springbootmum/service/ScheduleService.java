@@ -14,24 +14,24 @@ public class ScheduleService {
     @Autowired(required = true)
     private ScheduleRepository repository;
 
-    public Schedule saveStudent(Schedule schedule) {
+    public Schedule saveSchedule(Schedule schedule) {
         return repository.save(schedule);
     }
 
-    public List<Schedule> getStudents() {
+    public List<Schedule> getSchedule() {
         return repository.findAll();
     }
 
-    public Schedule getStudentById(Long id) {
+    public Schedule getScheduleById(Long id) {
         return repository.findById(id).orElse(null);
     }
 
-    public String deleteStudent(Long id) {
+    public String deleteSchedule(Long id) {
         repository.deleteById(id);
         return "Schedule removed !! " + id;
     }
 
-    public Schedule updateStudent(Schedule schedule,Long id) {
+    public Schedule updateSchedule(Schedule schedule,Long id) {
     	Schedule existingSchedule = repository.findById(id).orElse(null);
     	existingSchedule.setStatus(schedule.getStatus());
         return repository.save(existingSchedule);
