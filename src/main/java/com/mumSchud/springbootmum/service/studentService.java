@@ -25,6 +25,10 @@ public class studentService {
     public Student getStudentById(int id) {
         return repository.findById(id).orElse(null);
     }
+    
+    public Student getStudentByEmail(String email) {
+    	return repository.findByEmail(email).orElse(null);
+    }
 
     public String deleteStudent(int id) {
         repository.deleteById(id);
