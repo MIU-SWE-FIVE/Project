@@ -1,7 +1,7 @@
 <!doctype html>
 
 <html lang="en">
-<head>
+<head th:include="fragments/general.html :: head">
 <meta charset="utf-8">
 
 <title>Mum Schedule</title>
@@ -15,9 +15,11 @@
 </head>
 
 <body>
+	<div th:replace="fragments/general.html :: student-header"></div>
+
 	<section class="col-9 my-2 mx-auto main-container">
 		<article class="card mt-4">
-			<h4 class="card-header text-center text-secondary py-3">Register In Sections</h4>
+			<h4 class="card-header text-center text-secondary py-3"> Register in MUM Sections</h4>
 			<div class="card-body">
 				<table class="mt-4 table table-borderless table-striped table-hover">
 					<thead>
@@ -38,6 +40,7 @@
 							<td th:text="${section.roomLocation}" />
 							<td th:text="${section.capacity}" />
 							<td th:text="${section.capacity}-${section.getStudents().size()}" />
+
 							<td><a th:href="@{'/api/sections/' + ${section.id}+'/addStudent/'+ ${student.getId()}}">
 									<button th:if="!${section.findStudent(student.getEmail())}" style="background-color: #4CAF50; color: white;"
 										id="submit-btn"
@@ -50,6 +53,7 @@
 										class="d-block btn btn-outline-secondary ms-auto">
 										Cancel</button>
 							</a></td>
+
 						</tr>
 					</tbody>
 				</table>
@@ -57,5 +61,6 @@
 		</article>
 	</section>
 
+	<div th:replace="fragments/general.html :: footer"></div>
 </body>
 </html>

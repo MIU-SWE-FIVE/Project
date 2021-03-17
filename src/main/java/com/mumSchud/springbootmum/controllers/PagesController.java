@@ -1,8 +1,6 @@
 package com.mumSchud.springbootmum.controllers;
 
 import java.security.Principal;
-
-import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mumSchud.springbootmum.entity.Course;
-import com.mumSchud.springbootmum.entity.Faculty;
 import com.mumSchud.springbootmum.entity.Section;
 import com.mumSchud.springbootmum.entity.Student;
-import com.mumSchud.springbootmum.service.CourseService;
 import com.mumSchud.springbootmum.service.SectionService;
-import com.mumSchud.springbootmum.service.facultyService;
 import com.mumSchud.springbootmum.service.studentService;
 
 @Controller

@@ -1,11 +1,8 @@
 <!doctype html>
 
 <html lang="en">
-<head th:include="fragments/general.html :: head">
-
-	<title>Mum Schedule</title>
-	<script type="text/javascript" src="/js/src/facultyRest.js" ></script>	
-	
+<head th:insert="fragments/general.html :: head">
+	<title>Mum Schedule</title>			
 </head>
 
 <body>
@@ -65,5 +62,6 @@
 		</article>
 	</section>
 	<div th:replace="fragments/general.html :: footer"></div>
+	<script type="text/javascript" src="/js/src/facultyRest.js" ></script>
 </body>
 </html>
