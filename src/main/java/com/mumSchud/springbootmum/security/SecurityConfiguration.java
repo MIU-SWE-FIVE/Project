@@ -1,4 +1,4 @@
-package com.mumSchud.springbootmum;
+package com.mumSchud.springbootmum.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -8,8 +8,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import com.mumSchud.springbootmum.security.BaseUserDetailsService;
 
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -29,6 +27,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.antMatchers("/blocks").hasRole("ADMIN")
 			.antMatchers("/students").hasRole("ADMIN")
 			.antMatchers("/faculties").hasRole("ADMIN")
+			.antMatchers("/entries").hasRole("ADMIN")
+			.antMatchers("/sections").hasRole("ADMIN")
+			.antMatchers("/admin").hasRole("ADMIN")
+			.antMatchers("/student").hasRole("STUDENT")
 			.antMatchers("/").permitAll()
 			.and()
 			.formLogin();
