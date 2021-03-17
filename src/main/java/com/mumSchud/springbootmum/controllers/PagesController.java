@@ -1,5 +1,6 @@
 package com.mumSchud.springbootmum.controllers;
 
+import java.security.Principal;
 
 import java.security.Principal;
 import java.util.List;
@@ -32,12 +33,14 @@ public class PagesController {
   
   @RequestMapping("/")
 	public String homePage() {
-    	  return "index";	
-}
+		return "index";
+	}
 
 @RequestMapping("/admin")
-public String adminPage() {
-	  return "adminHomePage";	}
+public String adminPage(Model model, Principal principal) {
+	model.addAttribute("authUserName", principal.getName());
+	return "adminHomePage";
+}
 
 @RequestMapping("/student")
 public String studentPage(Model model,Principal principal) {

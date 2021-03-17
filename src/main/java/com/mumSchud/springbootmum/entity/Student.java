@@ -81,4 +81,9 @@ public class Student {
 		return "Student [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", age=" + age + ", email="
 				+ email + "]";
 	}
+
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return this.password;
+	}
 }
