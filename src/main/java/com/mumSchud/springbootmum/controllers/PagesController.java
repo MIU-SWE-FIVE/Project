@@ -22,36 +22,28 @@ import com.mumSchud.springbootmum.service.studentService;
 @Controller
 public class PagesController {
 	@Autowired
-    private SectionService service;
-  @Autowired
-    private CourseService courseService;
-  @Autowired
-    private facultyService facultyService;
-  @Autowired
-  private studentService studentService;
-	
-  
-  @RequestMapping("/")
+	private SectionService sectionService;
+	@Autowired
+	private studentService studentService;
+
+	@RequestMapping("/")
 	public String homePage() {
 		return "index";
 	}
 
-@RequestMapping("/admin")
-public String adminPage(Model model, Principal principal) {
-	model.addAttribute("authUserName", principal.getName());
-	return "adminHomePage";
-}
+	@RequestMapping("/admin")
+	public String adminPage(Model model, Principal principal) {
+		model.addAttribute("authUserName", principal.getName());
+		return "adminHomePage";
+	}
 
-@RequestMapping("/student")
-public String studentPage(Model model,Principal principal) {
-	List<Section>sections=service.getSections();
-	List<Course>courses=courseService.findAll();
-	List<Faculty>faculties=facultyService.getFaculties();
-	Student student=studentService.getStudentByEmail(principal.getName());
-	model.addAttribute("student",student);
-	model.addAttribute("sections", sections);
-	model.addAttribute("courses", courses);
-	model.addAttribute("faculties", faculties);
-	  return "studentHomePage";	}
+	@RequestMapping("/student")
+	public String studentPage(Model model, Principal principal) {
+		List<Section> sections = sectionService.getSections();
+		Student student = studentService.getStudentByEmail(principal.getName());
+		model.addAttribute("student", student);
+		model.addAttribute("sections", sections);
+		return "studentHomePage";
+	}
 
 }
