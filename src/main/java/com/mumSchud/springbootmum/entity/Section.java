@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -34,7 +35,7 @@ public class Section {
     @ManyToOne
     private Faculty faculty;
     
-    @OneToMany
+    @ManyToMany
     private List<Student> students;
 
     public Long getId() {
@@ -110,5 +111,35 @@ public class Section {
 	public String toString() {
 		return "Section [id=" + id + ", roomLocation=" + roomLocation + ", capacity=" + capacity + ", course=" + course.getId()
 				+ ", faculty=" + faculty.getId() + ", students=" + "]";
+	}
+	
+	public boolean addStudent(Student student) {
+		if(this.students.size()<this.capacity && !findStudent(student.getEmail())) {
+			this.students.add(student);
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean RemoveStudent(Student student) {
+		int i=0;
+		for(Student student1:this.students) {
+			if(student1.getId()==(student.getId())) {
+				this.students.remove(i);
+				return true;
+			}
+			i++;
+		}
+		return false;
+	
+	}
+	
+	public boolean findStudent(String userName) {
+		for(Student student:this.students) {
+			if(student.getEmail().compareToIgnoreCase(userName)==0) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

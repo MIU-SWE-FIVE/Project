@@ -34,6 +34,8 @@ public class SectionController {
 	    private CourseService courseService;
 	  @Autowired
 	    private facultyService facultyService;
+	  @Autowired
+	    private studentService studentService;
 
 	  
 	@RequestMapping("/sections")
@@ -62,7 +64,7 @@ public class SectionController {
 	public class SectionRestController {
 
 	    @PostMapping("/api/sections")
-	    public ModelAndView addStudent(Model model ,@RequestParam String roomLocation,
+	    public ModelAndView addSection(Model model ,@RequestParam String roomLocation,
                 @RequestParam Integer capacity,
                 @RequestParam int facultyId,@RequestParam int courseId) {
 	    	System.err.print(courseId + " ANAS "+facultyId );
@@ -94,16 +96,48 @@ public class SectionController {
 
 
 	    @PutMapping("/api/sections/{id}")
-	    public Section updateStudent( @RequestBody Section section,@PathVariable Long id) {
+	    public Section updateSection( @RequestBody Section section,@PathVariable Long id) {
 	        System.err.println(section.getFaculty().getId());
 	    	return service.updateSection(section,id);
 	    }
 
 	    @DeleteMapping("/api/sections/{id}")
-	    public ModelAndView deleteStudent(@PathVariable Long id) {
+	    public ModelAndView deleteSection(@PathVariable Long id) {
 	        service.deleteSection(id);
 	        ModelAndView mav = new ModelAndView("redirect:/sections");
 	        return mav;
 	    }
+	    
+	    @GetMapping("/api/sections/{id}/addStudent/{stdId}")
+	    public ModelAndView addStudentToSection(Model model ,@PathVariable Long id,
+	    		@PathVariable int stdId) {
+	    	Student sdt=studentService.getStudentById(stdId);
+	    	Section section=service.getSectionById(id);
+	    	section.addStudent(sdt);
+	    	service.saveSection(section);
+	    	List<Section>sections=service.getSections();
+	    	model.addAttribute("sections", sections);
+
+	        ModelAndView mav = new ModelAndView("redirect:/student");
+	        return mav;
+
+	    }
+	    
+	
+    @GetMapping("/api/sections/{id}/removeStudent/{stdId}")
+    public ModelAndView removeStudentfromSection(Model model ,@PathVariable Long id,
+    		@PathVariable int stdId) {
+    	Student sdt=studentService.getStudentById(stdId);
+    	Section section=service.getSectionById(id);
+    	section.RemoveStudent(sdt);
+    	service.saveSection(section);
+    	List<Section>sections=service.getSections();
+    	model.addAttribute("sections", sections);
+
+        ModelAndView mav = new ModelAndView("redirect:/student");
+        return mav;
+
+    }
+    
 	}
 }
