@@ -10,8 +10,8 @@
 	rel="stylesheet"
 	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 	crossorigin="anonymous">
-	<script type="text/javascript" src="/js/src/studentRest.js" ></script>	
-	
+    <script type="text/javascript" src="/js/src/sectionRest.js" ></script>	
+
 
 </head>
 
@@ -19,52 +19,52 @@
 	<section class="col-6 my-2 mx-auto">
 		<article class="card mt-4">
 			<h4 class="card-header text-center text-secondary py-3">Update
-				Student</h4>
+				Section</h4>
 			<div class="card-body">
-				<form onsubmit="updateStudent(); return false;">
+				<form onsubmit="updateSection();">
 					<table>
 						<tr>
 							<div class="input-group mb-3">
-								<td><b>Student ID : </b></td>
+								<td><b>Section ID : </b></td>
 								<td><input type="text" class="form-control text-primary"
-									th:value="${student.id}" aria-label="id" id="id"
-									name="firstname" aria-describedby="First Name" readonly>
-								</td>
+									th:value="${section.id}" aria-label="id" id="id" name="id"
+									readonly></td>
 						</tr>
 						</div>
 						<div class="input-group mb-3">
 							<tr>
-								<td><b>First Name : </b></td>
-								<td><input type="text" class="form-control text-primary" 
-									th:value="${student.firstname}" aria-label="firstName"id="firstName"
-									name="firstname" aria-describedby="First Name" required>
-								</td>
+								<td><b>Capacity : </b></td>
+								<td><input type="text" class="form-control text-primary"
+									th:value="${section.capacity}" aria-label="capacity"
+									id="capacity" name="capacity" required></td>
 							</tr>
 						</div>
 						<div class="input-group mb-3">
 							<tr>
-								<td><b>Last Name : </b></td>
+								<td><b>Room Location : </b></td>
 								<td><input type="text" class="form-control text-primary"
-									th:value="${student.lastname}" placeholder="Last Name" id="lastName"
-									aria-label="lastname" name="lastname"
+									th:value="${section.roomLocation}" placeholder="Room Location"
+									id="roomLocation" aria-label="room" name="roomLocation"
 									aria-describedby="Last Name" required></td>
 							</tr>
 						</div>
 						<div class="input-group mb-3">
 							<tr>
-								<td><b>E-mail : </b></td>
-								<td><input type="text" class="form-control text-primary"
-									th:value="${student.email}" placeholder="E-mail" id="email"
-									aria-label="email" name="email" aria-describedby="Email"
-									required></td>
+								<td><b>Faculty : </b></td>
+								<td><select id="faculty">
+										<option th:each="faculty : ${faculties}"
+											th:value="${faculty.id}+'%'+${faculty.getName}+'%'+${faculty.getPhonenumber}+'%'+${faculty.getAddress}" th:text="${faculty.getName()}"></option>
+								</select></td>
 							</tr>
 						</div>
 						<div class="input-group mb-3">
 							<tr>
-								<td><b>Age : </b></td>
-								<td><input type="text" class="form-control text-primary"
-									th:value="${student.age}" placeholder="Age" aria-label="age"id="age"
-									name="age" aria-describedby="Age" required></td>
+								<td><b>Course </b></td>
+								<td><select id="course">
+										<option th:each="course : ${courses}"
+											th:value="${course.id}+'%'+${course.getName}+'%'+${course.getCode}"
+											 th:text="${course.getName()}"></option>
+								</select></td>
 							</tr>
 						</div>
 					</table>
