@@ -14,7 +14,7 @@
         <a class="active" href="/">Home</a>
         <a href="/students">Login As Student</a>
         <a href="/admin">Login As Admin</a>
-      </div>
+    </div>
 
     <div class="container1">
         <div class="p-t-15" style="display: inline-block">
@@ -24,19 +24,7 @@
             <a href="/admin"><button class="btn btn--radius-2 btn--blue" type="submit">Login As Admin</button></a>
         </div>
         </div>
-    <footer class="footer" style="position: absolute;" >
-        <div class="container">
-            <p class="test-muted text-center">
-                <a href="https://compro.miu.edu" target="_blank">
-                    <img src="/img/logo.png" height="60" alt="MIU Compro"></img>
-                </a>
-                <br />
-                <small class="text black-50 text-center">
-                    &copy;2021 MIU App. All Rights Reserved.
-                </small>
-            </p>
-        </div>
-        </footer>
-
+    
+        <div th:replace="fragments/general.html :: footer"></div>
 </body>
 </html>
