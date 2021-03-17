@@ -28,7 +28,7 @@ public class StudentUserDetails implements UserDetails {
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return Arrays.asList(new SimpleGrantedAuthority("student"));
+		return Arrays.asList(new SimpleGrantedAuthority("ROLE_STUDENT"));
 	}
 
 	@Override

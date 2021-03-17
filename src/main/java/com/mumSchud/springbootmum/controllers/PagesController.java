@@ -19,6 +19,8 @@ import com.mumSchud.springbootmum.service.SectionService;
 import com.mumSchud.springbootmum.service.facultyService;
 import com.mumSchud.springbootmum.service.studentService;
 
+
+
 @Controller
 public class PagesController {
 	@Autowired
@@ -29,9 +31,11 @@ public class PagesController {
     private facultyService facultyService;
   @Autowired
   private studentService studentService;
-	
+  @Autowired
+
+    private studentService stduentService;
   
-  @RequestMapping("/")
+	@RequestMapping("/")
 	public String homePage() {
 		return "index";
 	}
