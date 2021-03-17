@@ -17,12 +17,8 @@ public class BaseUserDetailsService implements UserDetailsService {
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		System.out.println("username is " + username);
-		if (username.equals("admin")) {
-			AdminUserDetails userDetails = new AdminUserDetails();
-			System.out.println(userDetails.getPassword());
-			return userDetails;
-		}
+		if (username.equals("admin")) 
+			return new AdminUserDetails();
 		
 		Student student = studentService.getStudentByEmail(username);
 		
