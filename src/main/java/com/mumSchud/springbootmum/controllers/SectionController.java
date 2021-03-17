@@ -58,6 +58,22 @@ public class SectionController {
     	model.addAttribute("faculties", faculties);
 		return "sectionUpdate";
 	}
+	
+	@RequestMapping("/sections/detail/{id}")
+	public String detailPage(Model model,@PathVariable Long id) {
+		Section section=service.getSectionById(id);
+		List<Student> students=section.getStudents();
+		
+		List<Course>courses=courseService.findAll();
+    	List<Faculty>faculties=facultyService.getFaculties();
+    	model.addAttribute("section", section);
+    	model.addAttribute("courses", courses);
+    	model.addAttribute("faculties", faculties);
+    	model.addAttribute("students", students);
+    	
+		return "sectionDetail";
+	}
+	
 
 
 	@RestController

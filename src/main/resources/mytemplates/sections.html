@@ -33,11 +33,11 @@
 					</thead>
 					<tbody>
 						<tr th:each="section: ${sections}">
-							<th scope="row" th:text="${section.id}" />
+							<th scope="row"  ><a th:href="@{'/sections/detail/' + ${section.id}}"  th:text="${section.id}"></a></th>
 							<td th:text="${section.roomLocation}" />
 							<td th:text="${section.capacity}" />
-							<td th:text="${section.course.getId()}" />
-							<td th:text="${section.faculty.getId()}" />
+							<td th:text="${section.course.getName()}" />
+							<td th:text="${section.faculty.getName()}" />
 							<td><a th:href="@{'/sections/' + ${section.id}}">
 							<button style=" background-color: #4CAF50;color: white;
 							"id="submit-btn"
