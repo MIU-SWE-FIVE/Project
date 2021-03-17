@@ -2,9 +2,18 @@ package com.mumSchud.springbootmum.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+<<<<<<< Updated upstream
+=======
+import lombok.NoArgsConstructor;
+
+import java.util.HashSet;
+import java.util.Set;
+
+>>>>>>> Stashed changes
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Data
@@ -19,6 +28,8 @@ public class Faculty {
     private String name;
     private String phonenumber;
     private String address;
+    
+    
     
 	public Faculty(String name, String phonenumber, String address) {
 		this.name=name;
