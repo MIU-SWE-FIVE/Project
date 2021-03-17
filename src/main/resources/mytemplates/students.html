@@ -10,7 +10,7 @@
 	rel="stylesheet"
 	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 	crossorigin="anonymous">
-    <script type="text/javascript" src="js/src/studentRest.js" ></script>	
+<script type="text/javascript" src="js/src/studentRest.js"></script>
 
 </head>
 
@@ -19,7 +19,8 @@
 
 	<section class="col-6 my-2 mx-auto main-container">
 		<article class="card mt-4">
-			<h4 class="card-header text-center text-secondary py-3">Students List</h4>
+			<h4 class="card-header text-center text-secondary py-3">Students
+				List</h4>
 			<div class="card-body">
 				<table class="mt-4 table table-borderless table-striped table-hover">
 					<thead>
@@ -39,16 +40,17 @@
 							<td th:text="${student.email}" />
 							<td th:text="${student.age}" />
 							<td><a th:href="@{'/students/' + ${student.id}}">
-							<button style=" background-color: #4CAF50;color: white;
-							"id="submit-btn"
-							class="d-block btn btn-outline-secondary ms-auto">
-							Update</button></a></td>
-							<td><button style=" background-color: #FF0000;color: white;
-							"id="submit-btn" th:onclick="deleteStudent([[${student.id}]],[[${student.firstname}]],[[${student.lastname}]])"
-							class="d-block btn btn-outline-secondary ms-auto">
-							Delete</button></td>
+									<button style="background-color: #4CAF50; color: white;"
+										id="submit-btn"
+										class="d-block btn btn-outline-secondary ms-auto">
+										Update</button>
+							</a></td>
+							<td><button style="background-color: #FF0000; color: white;"
+									id="submit-btn"
+									th:onclick="deleteStudent([[${student.id}]],[[${student.firstname}]],[[${student.lastname}]])"
+									class="d-block btn btn-outline-secondary ms-auto">
+									Delete</button></td>
 						</tr>
-						</c:forEach>
 					</tbody>
 				</table>
 			</div>
@@ -79,26 +81,15 @@
 							placeholder="Age" aria-label="age" name="age"
 							aria-describedby="Age" required>
 					</div>
-					<div>
-						<table>
-							<tr></tr>
-
-							<tr>
-								<td><button type="submit" id="submit-btn"
-										class="d-block btn btn-outline-secondary ms-auto">
-										Create</button></td>
-								<td><a href="/admin"><button type="button"
-											style="background-color: #FF0000; color: white;"
-											class="d-block btn btn-outline-secondary ms-auto">
-											Back</button></a></td>
-							</tr>
-						</table>
+					<div class="d-flex justify-content-end">
+						<button type="submit" id="submit-btn"
+							class="d-block btn btn-outline-primary ms-auto">Create</button>
 					</div>
 				</form>
 			</div>
 		</article>
 	</section>
-	
-	<div th:replace="fragments/general.html :: footer"></div>	
+
+	<div th:replace="fragments/general.html :: footer"></div>
 </body>
 </html>
