@@ -2,20 +2,21 @@
 <html>
 
 <head th:include="fragments/general.html ::head">
-    <title>Mum Schud</title>
-    
+<title>Team 5 - Admin Home</title>
+
 </head>
 
 <body>
-    
-    <div th:replace="fragments/general.html :: header"></div>
-    
-    <div class="main-container">
-       <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-       <h3>Welcome to MUM schedule </h3>
-    </div>
+	<div th:replace="fragments/general.html :: header"></div>
 
-    <div th:replace="fragments/general.html :: footer"></div>
+	<div class="main-container text-secondary">
+		<h1 th:inline="text">
+			Welcome <span th:text="${authUserName}"></span>!
+		</h1>
+		<h5 class="pt-2">You can start CRUD operations by choosing appropriate links in the navbar above.</h5>
+	</div>
+
+	<div th:replace="fragments/general.html :: footer"></div>
 
 </body>
 </html>
