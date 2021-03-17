@@ -1,7 +1,7 @@
 <!doctype html>
 
 <html lang="en">
-<head>
+<head th:include="fragments/general.html :: head">
 <meta charset="utf-8">
 
 <title>Mum Schedule</title>
@@ -15,7 +15,9 @@
 </head>
 
 <body>
-	<section class="col-6 my-2 mx-auto">
+	<div th:replace="fragments/general.html :: header"></div>
+
+	<section class="col-6 my-2 mx-auto main-container">
 		<article class="card mt-4">
 			<h4 class="card-header text-center text-secondary py-3">Faculty List</h4>
 			<div class="card-body">
@@ -106,5 +108,7 @@
 			</div>
 		</article>
 	</section>
+	
+	<div th:replace="fragments/general.html :: footer"></div>
 </body>
 </html>
