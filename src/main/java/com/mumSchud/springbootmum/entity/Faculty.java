@@ -2,14 +2,13 @@ package com.mumSchud.springbootmum.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-<<<<<<< Updated upstream
-=======
+
+
 import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
 import java.util.Set;
 
->>>>>>> Stashed changes
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
