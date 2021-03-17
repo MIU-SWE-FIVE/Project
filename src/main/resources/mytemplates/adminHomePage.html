@@ -10,8 +10,9 @@
     
     <div th:replace="fragments/general.html :: header"></div>
     
-    <div class="container1">
-       
+    <div class="main-container">
+       <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+       <h3>Welcome to MUM schedule </h3>
     </div>
 
     <div th:replace="fragments/general.html :: footer"></div>
